@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The AI Receptionist Launch Kit — start a voice-AI phone-answering service</title>
+<meta name="description" content="The complete copy-paste system to launch a voice-AI phone receptionist service for local businesses — every prompt, script, sequence, and runbook. Built and deployed by a solo founder. No income claims.">
+<meta property="og:title" content="The AI Receptionist Launch Kit">
+<meta property="og:description" content="The complete copy-paste system to launch a voice-AI phone receptionist service. Built and deployed, not theory.">
+<meta property="og:image" content="cover.png">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  :root{
+    --bg:#15171c; --panel:#1c1f26; --panel2:#21242c; --line:#2c303a;
+    --ink:#eef1f5; --mut:#a3a9b5; --red:#e7593f; --red2:#ff6f54; --green:#8fe3a0;
+    --radius:16px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;
+    background-image:radial-gradient(1000px 520px at 84% -8%,rgba(231,89,63,.16),transparent 60%),radial-gradient(760px 600px at -8% 108%,rgba(40,60,90,.20),transparent 60%)}
+  a{color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+  .logo{font-weight:800;letter-spacing:-.01em;font-size:18px}
+  .logo .r{color:var(--red)}
+  .nav-cta{background:var(--red);color:#fff;text-decoration:none;padding:9px 16px;border-radius:9px;font-weight:700;font-size:14px}
+  .nav-cta:hover{background:var(--red2)}
+  /* hero */
+  .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;padding:42px 0 30px}
+  @media(max-width:840px){.hero{grid-template-columns:1fr;gap:26px}}
+  .kicker{letter-spacing:.28em;font-size:12px;font-weight:800;color:var(--red);text-transform:uppercase}
+  h1{font-size:48px;line-height:1.04;letter-spacing:-.025em;margin:14px 0 16px}
+  h1 .r{color:var(--red)}
+  @media(max-width:840px){h1{font-size:36px}}
+  .lead{font-size:18px;color:#cfd4dc;max-width:560px}
+  .hero-cta{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap}
+  .btn{display:inline-block;text-decoration:none;font-weight:700;border-radius:11px;padding:14px 24px;font-size:15px;transition:.15s;border:none;cursor:pointer}
+  .btn.primary{background:var(--red);color:#fff}
+  .btn.primary:hover{background:var(--red2);transform:translateY(-1px)}
+  .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+  .btn.ghost:hover{border-color:var(--red)}
+  .trust{margin-top:16px;font-size:13px;color:var(--mut)}
+  .trust b{color:var(--green)}
+  .hero-img{border-radius:var(--radius);border:1px solid var(--line);width:100%;box-shadow:0 24px 60px rgba(0,0,0,.4)}
+  /* sections */
+  section{padding:46px 0}
+  .eyebrow{letter-spacing:.2em;font-size:12px;font-weight:800;color:var(--red);text-transform:uppercase;margin-bottom:10px}
+  h2{font-size:30px;letter-spacing:-.02em;margin-bottom:8px}
+  .sec-sub{color:var(--mut);max-width:640px;margin-bottom:26px}
+  .problem{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:30px 32px}
+  .problem p{font-size:19px;color:#d7dbe2}
+  .problem .big{color:#fff;font-weight:700}
+  /* grid */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:840px){.grid{grid-template-columns:1fr}}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:20px}
+  .card h3{font-size:16px;margin-bottom:6px}
+  .card p{font-size:14px;color:var(--mut)}
+  .card .n{font-size:12px;font-weight:800;color:var(--red);letter-spacing:.1em}
+  /* tool banner */
+  .tool{display:flex;justify-content:space-between;align-items:center;gap:22px;background:linear-gradient(120deg,#101a16,#1c1f26);border:1px solid #244033;border-radius:var(--radius);padding:26px 30px;flex-wrap:wrap}
+  .tool .t{font-size:21px;font-weight:700}
+  .tool .d{color:var(--mut);font-size:15px;margin-top:4px;max-width:560px}
+  .tool a{background:#2fbd6b;color:#06210f;text-decoration:none;font-weight:800;padding:13px 22px;border-radius:10px;white-space:nowrap}
+  .tool a:hover{filter:brightness(1.08)}
+  /* pricing */
+  .price-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:780px;margin:0 auto}
+  @media(max-width:740px){.price-grid{grid-template-columns:1fr}}
+  .tier{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:28px}
+  .tier.pro{border-color:var(--red);position:relative}
+  .tier .tag{position:absolute;top:-11px;right:20px;background:var(--red);color:#fff;font-size:11px;font-weight:800;letter-spacing:.08em;padding:4px 11px;border-radius:999px}
+  .tier h3{font-size:20px}
+  .tier .amt{font-size:40px;font-weight:800;margin:8px 0 2px}
+  .tier .amt s{font-size:20px;color:var(--mut);font-weight:500;margin-left:8px}
+  .tier .was{font-size:13px;color:var(--mut)}
+  .tier ul{list-style:none;margin:18px 0 22px}
+  .tier li{font-size:14.5px;padding:6px 0 6px 26px;position:relative;color:#d7dbe2}
+  .tier li:before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:800}
+  .tier .btn{width:100%;text-align:center}
+  /* faq */
+  .faq{max-width:760px}
+  details{border-bottom:1px solid var(--line);padding:16px 0}
+  summary{cursor:pointer;font-weight:600;font-size:16px;list-style:none}
+  summary::-webkit-details-marker{display:none}
+  summary:before{content:"+ ";color:var(--red);font-weight:800}
+  details[open] summary:before{content:"– "}
+  details p{color:var(--mut);margin-top:10px;font-size:15px}
+  .honest{background:#1a130f;border:1px solid #3a241f;border-radius:var(--radius);padding:24px 28px;color:#e8d9d2}
+  .honest b{color:#fff}
+  footer{padding:40px 0 60px;color:#717784;font-size:13px;text-align:center;border-top:1px solid var(--line);margin-top:30px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav>
+    <div class="logo">AI Receptionist <span class="r">Launch Kit</span></div>
+    <a class="nav-cta" href="#pricing">Get the kit →</a>
+  </nav>
+
+  <header class="hero">
+    <div>
+      <div class="kicker">The Solo-Founder Series</div>
+      <h1>Launch a voice-AI <span class="r">phone receptionist</span> service.</h1>
+      <p class="lead">The complete, copy-paste system — every prompt, script, cold-email sequence, and runbook. Built and deployed by a solo founder, handed to you so you skip the three weeks of figuring it out.</p>
+      <div class="hero-cta">
+        <a class="btn primary" href="#pricing">Get the kit — from $19</a>
+        <a class="btn ghost" href="generator.html">Try the free tool →</a>
+      </div>
+      <div class="trust"><b>No income claims.</b> &nbsp;Just the real, working system. &nbsp;Secure checkout via Stripe.</div>
+    </div>
+    <img class="hero-img" src="cover.png" alt="The AI Receptionist Launch Kit">
+  </header>
+
+  <section>
+    <div class="problem">
+      <p><span class="big">Every missed call at a local business is a customer calling a competitor.</span> Roofers on a roof, plumbers under a sink, salon owners mid-cut — they can't answer, so the phone rings out to voicemail and the caller dials the next name on Google. That lost call was a four-figure job. There's a real, recurring-revenue business in fixing that — and this kit is the entire system to launch it.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">What's inside</div>
+    <h2>A working system, not a course.</h2>
+    <p class="sec-sub">Eight modules plus a copy-paste template pack — the actual assets behind a real deployed service, organized so you can build your demo this week and start selling.</p>
+    <div class="grid">
+      <div class="card"><div class="n">01 · GUIDE</div><h3>The business &amp; economics</h3><p>Who buys, what to charge ($300/mo and why), the real unit economics and margins.</p></div>
+      <div class="card"><div class="n">02 · GUIDE</div><h3>The tech stack, wired</h3><p>The exact tools — voice agent, payments, DB, site — why each one, and the build order.</p></div>
+      <div class="card"><div class="n">03 · TEMPLATE</div><h3>The receptionist agent</h3><p>A production-grade system prompt that books jobs, screens spam, and survives "are you a robot?"</p></div>
+      <div class="card"><div class="n">04 · TEMPLATE</div><h3>The sales machine</h3><p>The chat/closer prompt + a full objection library built around the move that actually closes: the live demo.</p></div>
+      <div class="card"><div class="n">05 · TEMPLATE</div><h3>Getting customers</h3><p>ICP, a cold-call script, and a written 5-email sequence designed to land replies.</p></div>
+      <div class="card"><div class="n">06 · RUNBOOK</div><h3>Go-live in under an hour</h3><p>Take a paying customer live by hand — the checklist, the test gauntlet, the forwarding gotcha.</p></div>
+      <div class="card"><div class="n">07 · GUIDE</div><h3>Legal &amp; compliance</h3><p>CAN-SPAM, TCPA, FCC, AI disclosure, call-recording consent — the landmines and how to avoid them.</p></div>
+      <div class="card"><div class="n">+ PACK</div><h3>Copy-paste everything</h3><p>The prompts, the sequence, the scripts, the onboarding questions — fill the blanks, paste, ship.</p></div>
+      <div class="card"><div class="n">★ PRO</div><h3>Scale faster</h3><p>Automation blueprint, Terms/Privacy starters, an outreach tracker, and a social post pack.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="tool">
+      <div>
+        <div class="t">First, try the free tool →</div>
+        <div class="d">Fill in a business and instantly generate a production-ready receptionist prompt — honesty rule, spam screening, booking flow, guardrails baked in. No signup. See the quality before you buy.</div>
+      </div>
+      <a href="generator.html">Open the free generator</a>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <div class="eyebrow" style="text-align:center">Launch price · first 72 hours</div>
+    <h2 style="text-align:center">Get the kit</h2>
+    <p class="sec-sub" style="margin:0 auto 26px;text-align:center">One-time payment. Instant value. Delivered to your email.</p>
+    <div class="price-grid">
+      <div class="tier">
+        <h3>Starter</h3>
+        <div class="amt">$19<s>$29</s></div>
+        <div class="was">launch price — goes to $29</div>
+        <ul>
+          <li>The full 8-module guide (PDF)</li>
+          <li>Receptionist prompt template</li>
+          <li>Sales + objection scripts</li>
+          <li>The 5-email cold sequence</li>
+          <li>Cold-call script + go-live runbook</li>
+          <li>Onboarding form questions</li>
+        </ul>
+        <a class="btn primary" href="https://buy.stripe.com/7sY00j9ibe8kc6C0ZDaVa06">Get Starter — $19</a>
+      </div>
+      <div class="tier pro">
+        <span class="tag">BEST VALUE</span>
+        <h3>Pro</h3>
+        <div class="amt">$39<s>$49</s></div>
+        <div class="was">launch price — goes to $49</div>
+        <ul>
+          <li><b>Everything in Starter</b></li>
+          <li>Provisioning automation blueprint (n8n)</li>
+          <li>Terms of Service + Privacy starters</li>
+          <li>Outreach tracker (lead → close)</li>
+          <li>Social post pack to market your service</li>
+        </ul>
+        <a class="btn primary" href="https://buy.stripe.com/3cI5kD8e76FS6Mi4bPaVa07">Get Pro — $39</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">Questions</div>
+    <h2>Good questions, straight answers.</h2>
+    <div class="faq" style="margin-top:18px">
+      <details><summary>Do I need to be technical?</summary><p>You need to follow instructions and copy-paste. The stack is API-first and the guide gives you the exact build order. No coding required to land your first customer.</p></details>
+      <details><summary>Are there ongoing costs?</summary><p>You can build your demo and make sales on free tiers. Once you have a paying customer, expect roughly $30–60/mo in telephony per customer — comfortably inside a $300/mo price. Don't turn on paid tools before a customer is paying.</p></details>
+      <details><summary>Does this make income claims?</summary><p>No. I won't show you fake screenshots or promise you'll make $X. You get the real, working system and the time it saves — easily three weeks. What you earn is up to your execution.</p></details>
+      <details><summary>How is it delivered?</summary><p>After checkout you'll enter your email and the kit is sent to you (I fulfill these personally — usually within a few hours). Reply to your receipt if anything's missing.</p></details>
+      <details><summary>Refunds?</summary><p>It's a digital product, so all sales are final — but if a file is missing or broken, email me and I'll fix it immediately.</p></details>
+    </div>
+  </section>
+
+  <section>
+    <div class="honest">
+      <b>An honest note.</b> This kit works because it's real — the actual stack, prompts, and playbook behind a deployed AI receptionist service, organized so you can copy it. Skip the hype. Sell one clear result — calls get answered instead of going to voicemail — and let a live demo do the convincing. That's the whole thing.
+    </div>
+  </section>
+
+</div>
+<footer>
+  AI Receptionist Launch Kit · Secure checkout by Stripe · No income claims, just the system.<br>
+  <a href="generator.html" style="color:var(--red)">Free prompt generator</a> &nbsp;·&nbsp; <a href="cheat-sheet.pdf" style="color:var(--red)">Free tech-stack cheat sheet</a>
+</footer>
+</body>
+</html>

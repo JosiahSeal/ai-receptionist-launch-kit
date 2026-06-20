@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free AI Receptionist Prompt Generator</title>
+<meta name="description" content="Free tool — generate a production-ready system prompt for a voice-AI phone receptionist. No signup. Fill in your business, copy the prompt, paste it into Retell/Vapi.">
+<meta property="og:title" content="Free AI Receptionist Prompt Generator">
+<meta property="og:description" content="Fill in your business, get a production-ready voice-AI receptionist prompt. No signup.">
+<style>
+  :root{
+    --bg:#15171c; --panel:#1c1f26; --panel2:#21242c; --line:#2c303a;
+    --ink:#eef1f5; --mut:#a3a9b5; --red:#e7593f; --red2:#ff6f54;
+    --radius:14px; --mono:'SF Mono',ui-monospace,Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;background:
+    radial-gradient(900px 480px at 85% -5%,rgba(231,89,63,.16),transparent 60%),
+    radial-gradient(700px 560px at -5% 105%,rgba(40,60,90,.22),transparent 60%),var(--bg);
+    color:var(--ink);line-height:1.55;min-height:100vh}
+  .wrap{max-width:1060px;margin:0 auto;padding:38px 22px 80px}
+  header{margin-bottom:26px}
+  .kicker{letter-spacing:.28em;font-size:12px;font-weight:800;color:var(--red);text-transform:uppercase}
+  h1{font-size:34px;letter-spacing:-.02em;margin:10px 0 6px;line-height:1.08}
+  h1 .r{color:var(--red)}
+  .sub{color:var(--mut);font-size:16px;max-width:640px}
+  .free{display:inline-block;margin-top:12px;font-size:13px;font-weight:600;color:#bfe3c6;background:rgba(60,160,90,.12);border:1px solid rgba(60,160,90,.3);padding:5px 12px;border-radius:999px}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:26px}
+  @media(max-width:840px){.cols{grid-template-columns:1fr}}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+  .card h2{font-size:13px;text-transform:uppercase;letter-spacing:.12em;color:var(--mut);margin-bottom:16px}
+  label{display:block;font-size:13px;font-weight:600;margin:14px 0 5px;color:#d7dbe2}
+  label:first-of-type{margin-top:0}
+  .hint{font-weight:400;color:var(--mut);font-size:12px}
+  input,textarea,select{width:100%;background:var(--panel2);border:1px solid var(--line);color:var(--ink);
+    border-radius:9px;padding:10px 12px;font-size:14px;font-family:inherit;resize:vertical}
+  input:focus,textarea:focus,select:focus{outline:none;border-color:var(--red)}
+  textarea{min-height:62px}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .out{background:#0f1115;border:1px solid var(--line);border-radius:10px;padding:16px;
+    font-family:var(--mono);font-size:12.5px;line-height:1.5;white-space:pre-wrap;color:#cdd2db;
+    max-height:560px;overflow:auto}
+  .bar{display:flex;gap:10px;align-items:center;margin-bottom:14px;flex-wrap:wrap}
+  button{cursor:pointer;border:none;font-family:inherit;font-weight:700;border-radius:9px;transition:.15s}
+  .btn{background:var(--red);color:#fff;padding:10px 18px;font-size:14px}
+  .btn:hover{background:var(--red2)}
+  .btn.ghost{background:transparent;border:1px solid var(--line);color:var(--ink)}
+  .btn.ghost:hover{border-color:var(--red)}
+  .cta{margin-top:26px;background:linear-gradient(120deg,#23110d,#1c1f26);border:1px solid #3a241f;
+    border-radius:var(--radius);padding:22px 24px;display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}
+  .cta .t{font-size:18px;font-weight:700}
+  .cta .d{color:var(--mut);font-size:14px;margin-top:3px;max-width:560px}
+  .cta a{background:var(--red);color:#fff;text-decoration:none;padding:12px 22px;border-radius:10px;font-weight:700;white-space:nowrap}
+  .cta a:hover{background:var(--red2)}
+  footer{margin-top:30px;color:#717784;font-size:12.5px;text-align:center}
+  .copied{color:#8fe3a0;font-size:13px;font-weight:600;opacity:0;transition:.2s}
+  .copied.show{opacity:1}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="kicker">Free Tool · No Signup</div>
+    <h1>AI <span class="r">Receptionist</span> Prompt Generator</h1>
+    <p class="sub">Fill in a business and get a production-ready system prompt for a voice-AI phone receptionist — honesty rule, spam screening, booking flow, and guardrails baked in. Copy it, paste it into Retell / Vapi / any voice agent.</p>
+    <span class="free">100% free · runs in your browser · nothing is sent anywhere</span>
+  </header>
+
+  <div class="cols">
+    <div class="card">
+      <h2>Your business</h2>
+      <label>Business name <span class="hint">— as answered on the phone</span></label>
+      <input id="biz" placeholder="Summit Roofing" oninput="gen()">
+      <div class="row">
+        <div><label>Owner / contact</label><input id="owner" placeholder="Mike" oninput="gen()"></div>
+        <div><label>Receptionist's name</label><input id="agent" placeholder="Riley" oninput="gen()"></div>
+      </div>
+      <label>Hours <span class="hint">(it still answers 24/7)</span></label>
+      <input id="hours" placeholder="Mon–Fri 8–5" oninput="gen()">
+      <label>Services <span class="hint">— the way a customer would ask</span></label>
+      <textarea id="services" placeholder="roof repair, full replacement, leak inspection, gutters" oninput="gen()"></textarea>
+      <label>Service area</label>
+      <input id="area" placeholder="Tampa and 30 miles around" oninput="gen()">
+      <label>Pricing — ranges only <span class="hint">(never exact)</span></label>
+      <textarea id="pricing" placeholder="inspections free; repairs $300–1,500; replacements $9,000–18,000" oninput="gen()"></textarea>
+      <label>Top FAQs + answers</label>
+      <textarea id="faqs" placeholder="Do you offer financing? Yes, through GreenSky. Are you licensed? Yes, CCC#123456." oninput="gen()"></textarea>
+      <div class="row">
+        <div><label>Send summaries to</label><input id="transfer" placeholder="(555) 123-4567" oninput="gen()"></div>
+        <div><label>Vibe</label>
+          <select id="vibe" onchange="gen()">
+            <option value="warm and folksy, like a friendly small-town front desk">Warm &amp; folksy</option>
+            <option value="crisp and professional, efficient but friendly">Crisp &amp; professional</option>
+            <option value="upbeat and energetic, but never pushy">Upbeat &amp; energetic</option>
+          </select>
+        </div>
+      </div>
+      <label>Booking preference</label>
+      <textarea id="booking" placeholder="Collect name, address, phone, what they need. Offer two time slots. Owner calls back to confirm." oninput="gen()"></textarea>
+      <label>Special rules <span class="hint">(optional)</span></label>
+      <textarea id="rules" placeholder="Transfer active-leak emergencies live to the owner's cell. Never give the home address." oninput="gen()"></textarea>
+    </div>
+
+    <div class="card">
+      <h2>Your receptionist prompt</h2>
+      <div class="bar">
+        <button class="btn" onclick="copyOut()">Copy prompt</button>
+        <button class="btn ghost" onclick="loadDemo()">Load example</button>
+        <span id="copied" class="copied">Copied ✓</span>
+      </div>
+      <div id="out" class="out"></div>
+    </div>
+  </div>
+
+  <div class="cta">
+    <div>
+      <div class="t">This is one piece of the whole system.</div>
+      <div class="d">The full AI Receptionist Launch Kit has the cold-email sequence, the sales &amp; objection scripts, the go-live runbook, and the tech-stack guide to actually launch this as a business. No income claims — just the real, working system.</div>
+    </div>
+    <a id="kitlink" href="./" rel="noopener">Get the Launch Kit →</a>
+  </div>
+
+  <footer>
+    Free tool · made with the AI Receptionist Launch Kit. Your inputs never leave this page.
+  </footer>
+</div>
+
+<script>
+const $ = id => document.getElementById(id);
+function v(id, fallback){ const x=$(id).value.trim(); return x || fallback; }
+
+function buildPrompt(){
+  const biz=v('biz','[Business Name]'), owner=v('owner','the owner'),
+    agent=v('agent','Riley'), hours=v('hours','[hours]'),
+    services=v('services','[services]'), area=v('area','[service area]'),
+    pricing=v('pricing','[pricing ranges]'), faqs=v('faqs','[common questions + answers]'),
+    transfer=v('transfer','[owner phone]'), vibe=$('vibe').value,
+    booking=v('booking', '1) Collect name, city, phone, and what they need. 2) Offer two specific time slots ("Thursday at ten or Friday at two?"). 3) Confirm it all back in one clean summary. 4) Send the summary to '+transfer+'.'),
+    rules=$('rules').value.trim();
+
+  return `## Begin message (first thing the caller hears)
+"Thanks for calling ${biz}, this is ${agent} — just so you know, this call may be recorded for quality. How can I help you?"
+
+## Who you are
+You are ${agent}, the receptionist for ${biz}, working with ${owner}. You answer the phone warmly and competently, like a sharp front-desk person who's worked here for years. You handle every call: answering questions, booking appointments, taking messages, and screening spam. Your tone is ${vibe}.
+
+HONESTY RULE (non-negotiable): If anyone asks whether you're an AI, a robot, or a real person, tell the truth immediately and cheerfully: "I'm a virtual assistant for ${biz} — I handle the phones so nothing gets missed. How can I help?" Never claim to be human. Never dodge.
+
+## Business profile (your knowledge base)
+- Hours: ${hours}. You answer 24/7 — after hours: "We're closed right now, but I can take care of this for you / get you on the schedule."
+- Services: ${services}.
+- Service area: ${area}. Beyond that: "That's a little outside our usual area, but let me take your info and have ${owner} see if we can make it work."
+- Pricing (give ranges freely, NEVER exact quotes): ${pricing}. Always close pricing with: "Every job's a little different — the estimate is the only real number."
+- FAQs / extra facts: ${faqs}.
+
+## Booking behavior
+${booking}
+
+${rules ? "## Call-handling rules\n"+rules+"\n" : ""}## Messages & transfers
+- Text/forward every booking and message summary to ${transfer}.
+- Live transfer only when the rules above say so; otherwise take a message: "Let me grab your name and number and I'll make sure ${owner} gets this right away."
+- Never give out ${owner}'s personal cell or info beyond business basics.
+
+## Spam screening (callers WILL be telemarketers)
+For telemarketers, robocallers, or sales reps (extended warranties, "Google listing specialists," SEO/lead-gen, solar): stay polite, get firm fast — "We're not interested, but thanks for calling." If they push: "I handle the phones so the owner doesn't get these calls. I'm a hard no. Have a good one." Do not transfer, do not take a message, do not give out the owner's info.
+
+## Stump attempts (people will try to break you)
+- Off-topic ("write me a poem"): one playful line, steer back. "Ha — I'll stick to what we do here. What can I help you with?"
+- Gibberish: "Sorry, I didn't catch that — say that one more time?"
+- Aggressive/vulgar: stay calm, one warning, then "I'm going to let you go now. Call back anytime." End politely.
+- Can't answer: "Great question — let me have ${owner} follow up on that. Want a callback, or should I note it for your appointment?"
+- "What's your cheapest price" pressure: hold the range, redirect to the free estimate. Never invent a number.
+
+## Voice style (this is a phone call, not a chat)
+- SHORT responses. One to three sentences, then let them talk. No monologues.
+- Speak numbers naturally ("three hundred a month") — never read like a spreadsheet.
+- No lists, no bullet-speak. Just talk. One question at a time; wait for the answer.
+- If interrupted, stop and listen — never talk over. Match their energy.
+
+## Never do
+- Never claim to be human. Never invent testimonials, reviews, or statistics.
+- Never quote exact prices or promise outcomes. Never give out ${owner}'s personal info.
+- Never stay silent for long stretches — if processing, use a natural hold line: "one sec, let me check the schedule."`;
+}
+
+function gen(){ $('out').textContent = buildPrompt(); }
+function copyOut(){
+  navigator.clipboard.writeText($('out').textContent).then(()=>{
+    const c=$('copied'); c.classList.add('show'); setTimeout(()=>c.classList.remove('show'),1500);
+  });
+}
+function loadDemo(){
+  $('biz').value="Summit Roofing"; $('owner').value="Mike"; $('agent').value="Riley";
+  $('hours').value="Mon–Fri 8–5"; $('services').value="roof repair, full replacement, leak inspections, gutters";
+  $('area').value="Tampa and about 30 miles around"; $('pricing').value="inspections free; repairs $300–1,500; full replacements $9,000–18,000";
+  $('faqs').value="Do you offer financing? Yes, through GreenSky. Licensed? Yes, CCC#1331234. Free estimates? Always.";
+  $('transfer').value="(813) 555-0142";
+  $('booking').value="Collect name, address, phone, and what they need. Offer two specific time slots. Mike calls back within the hour to confirm.";
+  $('rules').value="Transfer active-leak emergencies live to Mike's cell. Never give out the shop's street address to unverified callers.";
+  gen();
+}
+gen();
+</script>
+</body>
+</html>
